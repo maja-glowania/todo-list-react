@@ -16,7 +16,7 @@ Welcome to my first React application! This project is a simple To-Do List desig
 
 ## Demo
 
-https://maja-glowania.github.io/to-do-list/
+[Link to the Demo website](https://maja-glowania.github.io/todo-list-react/)
 
 ![to-do-list](https://github.com/user-attachments/assets/294dfe66-4544-448b-b40a-5a43e2d02e7a)
 
