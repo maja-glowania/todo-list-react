@@ -1,7 +1,7 @@
 import "./style.css";
 
 const Buttons = ({ tasks, hideDoneTasks }) =>
-  tasks.lenght > 0 && (
+  tasks.lenght && (
     <div className="buttons">
       <button className="buttons__button">
         {hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
