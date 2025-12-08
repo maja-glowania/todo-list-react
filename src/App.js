@@ -9,12 +9,12 @@ import { useLocalStorage } from "./useLocalStorage";
 
 const localStorageKey = "tasksData";
 
-function App() {
-  const defaultTasks = [
-    { id: 1, content: "przejść na React'a", done: false },
-    { id: 2, content: "zjeść obiad", done: true },
-  ];
+const defaultTasks = [
+  { id: 1, content: "przejść na React'a", done: false },
+  { id: 2, content: "zjeść obiad", done: true },
+];
 
+function App() {
   const [hideDone, setHideDone] = useState(false);
 
   const [tasks, setTasks] = useLocalStorage(localStorageKey, defaultTasks);
