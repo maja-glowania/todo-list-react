@@ -1,5 +1,4 @@
 import { useTasks } from "./useTasks";
-
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -20,8 +19,7 @@ function App() {
 
   return (
     <Container>
-            <Header title="Lista zadań" />
-           {" "}
+            <Header title="Lista zadań" />     {" "}
       <Section
         title="Dodaj nowe zadanie"
         body={<Form addNewTask={addNewTask} />}
