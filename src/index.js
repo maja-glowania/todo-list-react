@@ -4,15 +4,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
-import { GlobalStyle } from "./GlobalStyle";
+import { GlobalStyle } from "./globalStyle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
+        <GlobalStyle />   {" "}
     <ThemeProvider theme={theme}>
-      <App />
+            <App />   {" "}
     </ThemeProvider>
+     {" "}
   </React.StrictMode>
 );
 
