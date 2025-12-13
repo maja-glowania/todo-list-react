@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const SectionContainer = styled.section`
   margin: 10px 0;
-  background-color: white;
-  box-shadow: 0 0 5px #ddd;
+  background-color: ${({ theme }) => theme.color.componentBackground};
+  box-shadow: ${({ theme }) => theme.boxShadow.primary};
 `;
 
 export const Header = styled.header`
   font-size: 20px;
   margin: 0px;
   padding: 20px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${({ theme }) => theme.color.border};
 
   display: flex;
   justify-content: space-between;
@@ -18,7 +18,7 @@ export const Header = styled.header`
   flex-wrap: wrap;
   gap: 10px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;

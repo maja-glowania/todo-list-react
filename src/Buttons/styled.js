@@ -5,7 +5,7 @@ export const ButtonsContainer = styled.div`
   margin-left: auto;
   gap: 10px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     flex-basis: 100%;
     flex-direction: column;
     width: 100%;
@@ -16,7 +16,7 @@ export const ButtonsContainer = styled.div`
 export const Button = styled.button`
   background: none;
   border: none;
-  color: rgb(0, 128, 128);
+  color: ${({ theme }) => theme.color.primary};
   font-size: 14px;
   cursor: pointer;
   padding: 5px;
@@ -25,15 +25,15 @@ export const Button = styled.button`
 
   &:hover {
     transition: 1s;
-    color: rgb(1, 180, 180);
+    color: ${({ theme }) => theme.color.primaryHover};
   }
 
   &:disabled {
-    color: rgb(204, 204, 204);
+    color: ${({ theme }) => theme.color.disabled};
     cursor: default;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     width: 100%;
   }
 `;

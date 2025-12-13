@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
+  background-color: ${({ theme }) => theme.color.background};
   max-width: 1000px;
   padding: 20px;
   margin: 0 auto;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     padding: 20px 25px;
   }
 `;

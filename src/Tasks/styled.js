@@ -24,7 +24,7 @@ export const ListItem = styled.li`
   align-items: center;
   grid-gap: 10px;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid ${({ theme }) => theme.color.border};
   width: 100%;
 
   ${({ $hidden }) =>
@@ -46,23 +46,23 @@ export const TaskButton = styled.button`
   transition: 1s;
   cursor: pointer;
 
-  ${({ $remove }) =>
+  ${({ $remove, theme }) =>
     $remove &&
     css`
-      background-color: red;
+      background-color: ${theme.color.danger};
 
       &:hover {
-        background-color: hsl(0, 100%, 70%);
+        background-color: ${theme.color.dangerHover};
       }
     `}
 
-  ${({ $toggleDone }) =>
+  ${({ $toggleDone, theme }) =>
     $toggleDone &&
     css`
-      background-color: green;
+      background-color: ${theme.color.success};
 
       &:hover {
-        background-color: hsl(120, 100%, 30%);
+        background-color: ${theme.color.successHover};
       }
     `}
 `;
