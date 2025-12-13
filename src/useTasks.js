@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 const localStorageKey = "tasksData";
 
 const defaultTasks = [
-  { id: 1, content: "przejść na Styled Components", done: false },
-  { id: 2, content: "zjeść obiad", done: true },
+  { id: 1, content: "zjeść obiad", done: false },
+  { id: 2, content: "umyć naczynia", done: true },
 ];
 
 const getInitialTasks = () => {
