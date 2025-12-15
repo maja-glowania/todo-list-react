@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { useTasks } from "../../useTasks";
 import Form from "./Form";
 import TasksContainer from "./TasksContainer";
@@ -5,10 +6,11 @@ import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Header from "../../common/Header";
 import { Container } from "../../common/Container/styled";
+import { selectTasks } from "./tasksSlice";
 
 function Tasks() {
   const {
-    tasks,
+    // tasks,
     hideDone,
     addNewTask,
     removeTask,
@@ -16,6 +18,8 @@ function Tasks() {
     setAllDone,
     toggleHideDone,
   } = useTasks();
+
+  const { tasks } = useSelector(selectTasks);
 
   return (
     <Container>
@@ -28,20 +32,11 @@ function Tasks() {
         title="Lista zadań"
         body={
           <TasksContainer
-            tasks={tasks}
-            hideDone={hideDone}
             removeTask={removeTask}
             toggleTaskDone={toggleTaskDone}
           />
         }
-        extraHeaderContent={
-          <Buttons
-            tasks={tasks}
-            hideDone={hideDone}
-            toggleHideDone={toggleHideDone}
-            setAllDone={setAllDone}
-          />
-        }
+        extraHeaderContent={<Buttons setAllDone={setAllDone} />}
       />
     </Container>
   );
