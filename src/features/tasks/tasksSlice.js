@@ -1,26 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
+const localStorageKey = "tasksData";
+
+const getInitialTasks = () => {
+  try {
+    const storedValue = localStorage.getItem(localStorageKey);
+    if (storedValue) {
+      return JSON.parse(storedValue);
+    }
+  } catch (error) {
+    console.error("Błąd ładowania stanu z Local Storage:", error);
+  }
+  return [];
+};
 
 const tasksSlice = createSlice({
   name: "tasks",
   initialState: {
-    tasks: [],
+    tasks: getInitialTasks(),
     hideDone: false,
   },
   reducers: {
-    addTask: ({ tasks }, { payload }) => {
-      tasks.push(payload);
+    addTask: (state, { payload }) => {
+      state.tasks.push(payload);
     },
+
     toggleHideDone: (state) => {
       state.hideDone = !state.hideDone;
     },
-    toggleTaskDone: ({ tasks }, { payload }) => {
-      const index = tasks.findIndex(({ id }) => id === payload);
-      tasks[index].done = !tasks[index].done;
+
+    toggleTaskDone: (state, { payload }) => {
+      const index = state.tasks.findIndex(({ id }) => id === payload);
+      state.tasks[index].done = !state.tasks[index].done;
     },
-    removeTask: ({ tasks }, { payload: taskId }) => {
-      const index = tasks.findIndex((task) => task.id === taskId);
-      tasks.splice(index, 1);
+
+    removeTask: (state, { payload: taskId }) => {
+      const index = state.tasks.findIndex((task) => task.id === taskId);
+      state.tasks.splice(index, 1);
     },
+
     setAllDone: (state) => {
       state.tasks.forEach((task) => {
         task.done = true;
