@@ -5,7 +5,7 @@ export const FormContainer = styled.form`
   grid-template-columns: 1fr auto;
   grid-gap: 10px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     grid-template-columns: 1fr;
     grid-gap: 10px;
   }
@@ -16,16 +16,16 @@ export const Input = styled.input`
   width: 100%;
   max-width: 800px;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid ${({ theme }) => theme.color.border};
 
   &:focus {
-    border-color: rgb(0, 128, 128);
-    outline-color: black;
+    border-color: ${({ theme }) => theme.color.primary};
+    outline-color: ${({ theme }) => theme.color.inputFocus};
   }
 `;
 
 export const Button = styled.button`
-  background-color: rgb(0, 128, 128);
+  background-color: ${({ theme }) => theme.color.primary};
   color: white;
   border: none;
   padding: 10px;
@@ -33,11 +33,11 @@ export const Button = styled.button`
   width: 150px;
 
   &:hover {
-    background: rgb(1, 180, 180);
+    background: ${({ theme }) => theme.color.primaryHover};
     transform: scale(1.1, 1.1);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
     grid-template-columns: 1fr;
     width: 100%;
   }
