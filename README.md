@@ -4,14 +4,14 @@
 
 This project is a simple To-Do List designed to help you manage your daily tasks efficiently. The application was initially bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Since its inception, the project has been significantly refactored to prioritize clean code, modularity, and maintainability.
+The project has been significantly refactored to use a modern, centralized state management system, prioritizing clean code, modularity, and maintainability.
 
 **Key Features:**
 
 - **Quick Control:** Easily add, check, and delete tasks.
 - **Bulk Operations:** A button to mark all tasks as completed.
 - **Filtering:** A button to hide all completed tasks.
-- **Data Persistence:** Tasks are saved locally in the browser's storage, ensuring they remain after page refresh.
+- **Data Persistence:** Tasks are synchronized with the browser's local storage, ensuring they remain after page refresh.
 
 **Remember:** start with the quickest and easiest tasks to overcome procrastination.
 
@@ -22,11 +22,13 @@ Since its inception, the project has been significantly refactored to prioritize
 This section highlights the core technologies and architectural choices implemented in the project:
 
 - **React (JavaScript Library)**
-- **Styled Components** (CSS-in-JS library for component styling, replacing traditional CSS files).
-- **Custom React Hooks** (e.g., **`useTasks`** for isolated state logic, and **`useRef`** for direct DOM manipulation like focusing the input).
+- **Redux Toolkit (RTK)** (Centralized state management, replacing local state hooks).
+  - **Slices:** Used to define reducers and actions for the `tasks` domain.
+- **Redux DevTools Extension** (For powerful debugging and tracking of state changes).
+- **Styled Components** (CSS-in-JS library for component styling).
 - **JavaScript (ES6+)**
 - **HTML5**
-- **Local Storage** (for data persistence)
+- **Local Storage** (Synchronized via Redux Store subscription for data persistence).
 
 ---
 
