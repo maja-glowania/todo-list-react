@@ -1,8 +1,8 @@
 export const getExampleTasks = async () => {
-  const response = await fetch("/todo-list-react/tasks.json");
+  const response = await fetch(`${process.env.PUBLIC_URL}/tasks.json`);
 
   if (!response.ok) {
-    throw new Error("Błąd podczas pobierania danych");
+    throw new Error(response.statusText);
   }
 
   return await response.json();
