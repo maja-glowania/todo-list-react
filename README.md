@@ -33,7 +33,7 @@ This project uses a modern React stack to handle complex side effects and state:
 
 [Link to the Demo website](https://maja-glowania.github.io/todo-list-react/)
 
-![to-do-list](https://github.com/user-attachments/assets/294dfe66-4544-448b-b40a-5a43e2d02e7a)
+![to-do-list-react](https://github.com/user-attachments/assets/e007f442-56c5-4411-b115-c9e60bfabc2c)
 
 ---
 
