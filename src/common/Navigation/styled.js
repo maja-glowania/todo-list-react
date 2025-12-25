@@ -27,12 +27,15 @@ export const NavigationLink = styled(NavLink)`
   display: block;
   padding: 15px 20px;
   transition: 0.3s;
+  border-bottom: 1px solid transparent;
 
   &.active {
     font-weight: bold;
+    border-bottom: 1px solid ${({ theme }) => theme.color.componentBackground};
   }
 
   &:hover {
     color: ${({ theme }) => theme.color.primaryLighterHover};
+    border-bottom: 1px solid ${({ theme }) => theme.color.primaryLighterHover};
   }
 `;
